@@ -75,8 +75,16 @@ function get_movies_data(){
 }
 
 function search_movies(e){
-	alert("Click!");
+	// Open the new screen
+	var args = get_movies_data();
+	var movieDetailsView = Alloy.createController("movie_details", args).getView();
+	
+	// This is the opening the window in the navigation bar. 
+	$.index.openWindow(movieDetailsView);
 }
+
+// TODO: Create a UI with the OMDB logo
+// TODO: Create a search bar
 
 // Initialization script
 (function(){
