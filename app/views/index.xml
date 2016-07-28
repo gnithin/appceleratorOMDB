@@ -1,0 +1,10 @@
+<Alloy>
+	<NavigationWindow>
+		<Window class="container">
+			<View layout="vertical">
+					<Label>Hello, Is there anybody in there?</Label>
+					<button id="movieSearch">Just click if you can hear me</button>
+			</View>
+		</Window>
+	</NavigationWindow>
+</Alloy>
