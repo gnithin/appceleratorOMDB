@@ -74,7 +74,7 @@ function get_movies_data(){
   	return movies_data;
 }
 
-function search_movies(){
+function search_movies(e){
 	alert("Click!");
 }
 

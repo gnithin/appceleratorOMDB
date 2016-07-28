@@ -1,9 +1,9 @@
 <Alloy>
 	<NavigationWindow>
-		<Window class="container">
+		<Window class="container" title="OMDB App">
 			<View layout="vertical">
 					<Label>Hello, Is there anybody in there?</Label>
-					<button id="movieSearch">Just click if you can hear me</button>
+					<Button id="movieSearch">Search</Button>
 			</View>
 		</Window>
 	</NavigationWindow>
