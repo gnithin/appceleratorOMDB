@@ -1,10 +1,9 @@
 <Alloy>
-	<NavigationWindow>
 		<Window class="container" title="OMDB App">
 			<View layout="vertical">
 					<Label>Hello, Is there anybody in there?</Label>
 					<Button id="movieSearch">Search</Button>
+					<ImageView url="iphone/Default.png"></ImageView>
 			</View>
 		</Window>
-	</NavigationWindow>
 </Alloy>

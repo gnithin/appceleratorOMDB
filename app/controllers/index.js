@@ -88,6 +88,6 @@ function search_movies(e){
 
 // Initialization script
 (function(){
-	$.movieSearch.addEventListener("click", search_movies);
+	//$.movieSearch.addEventListener("click", search_movies);
 	$.index.open();
 })();
