@@ -1,4 +1,5 @@
-function get_movies_data(){
+function getMoviesData(){
+	// TODO: These must be replaced by something else
 	var movies_data =  [
 	    {
 	      "Title": "Bond of Love",
@@ -74,40 +75,16 @@ function get_movies_data(){
   	return movies_data;
 }
 
-function search_movies(e){
+function searchMovies(e){
 	// Open the new screen
-	var args = get_movies_data();
+	var args = getMoviesData();
 	var movieDetailsView = Alloy.createController("movie_details", args).getView();
 	
 	// This is the opening the window in the navigation bar. 
 	$.index.openWindow(movieDetailsView);
 }
 
-// Initialization script
-(function(){
-	// var buttonHeight = 40;
-	// var movieButton = Ti.UI.createButton({
-		// // This id is not being used anywhere
-		// id: "movieSearchButton",
-// 		
-		// // Properties 
-		// title: 'SEARCH',
-	    // top: "10%",
-	    // width: 100,
-	    // height: buttonHeight,
-		// color: "#ffffff",
-	    // font: {
-	    	// color : "#ffffff"
-	    // },
-// 	        
-	    // // Styling the button
-	    // borderRadius: buttonHeight/2,
-	    // borderWidth: '2',
-	    // borderColor: "#ffffff"
-	// });
-	// // Adding a button as is
-	// $.movieButtonView.add(movieButton);
-// 	
+function createSearchButton(){
 	// Creating an image and a label
 	var paddingVertical = 10;
 	var paddingHorizontal = 10;
@@ -153,5 +130,11 @@ function search_movies(e){
 	
 	$.movieButtonView.add(dummyView);
 	
+	$.movieButtonView.addEventListener("click", searchMovies);
+}
+
+// Initialization script
+(function(){
+	createSearchButton();
 	$.index.open();
 })();

@@ -1,8 +1,6 @@
 <Alloy>
-	<NavigationWindow>
-		<Window class="container" id="movieDetailsWindow">
-			<!-- Add the table view for the things here -->
-			<TableView id="movieDetailsTable"></TableView>
-		</Window>
-	</NavigationWindow>
+	<Window class="container" id="movieDetailsWindow">
+		<!-- Add the table view for the things here -->
+		<TableView id="movieDetailsTable"></TableView>
+	</Window>
 </Alloy>
