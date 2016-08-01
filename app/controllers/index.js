@@ -89,5 +89,16 @@ function search_movies(e){
 // Initialization script
 (function(){
 	//$.movieSearch.addEventListener("click", search_movies);
+	var addnLabel = Ti.UI.createButton({
+	   title: 'Hello',
+	   top: 10,
+	   width: 100,
+	   height: 50,
+	   backgroundImage:'/images/Default.png'
+	});
+	
+	$.imageContainer.add(addnLabel);
 	$.index.open();
+	alert(Titanium.Filesystem.resourcesDirectory);
+
 })();
