@@ -1,9 +1,9 @@
 <Alloy>
 	<NavigationWindow>
-		<Window class="container" title="OMDB App">
+		<Window class="container" title="OMDB">
 			<View layout="vertical">
-					<ImageView id="containerImageView"></ImageView>
-					<View id="imageContainer"></View>
+					<ImageView id="movieLogoImageView"></ImageView>
+					<Label id="movieLabel">Search for your favorite movie...</Label>
 			</View>
 		</Window>
 	</NavigationWindow>

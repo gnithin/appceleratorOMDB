@@ -8,8 +8,9 @@
 	color: "#000"
 }
 
-"#containerImageView" : {
-	width: "100%",
-	height: "30%",
-	image: "/images/Default.png"
+"#movieLogoImageView" : {
+	width: "50%",
+	height: "20%",
+	image: "/images/omdb-logo.png",
+	top: "2%",
 }
