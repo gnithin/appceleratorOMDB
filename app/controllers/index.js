@@ -88,5 +88,17 @@ function search_movies(e){
 
 // Initialization script
 (function(){
+	var movieButton = Ti.UI.createButton({
+		id: "movieSearchButton", 
+		title: 'SEARCH',
+	    top: 10,
+	    width: 100,
+	    height: 50,
+	    color: "#ffffff",
+	    font: {
+	    	color : "#ffffff"
+	    }
+	});
+	$.moveButtonView.add(movieButton);
 	$.index.open();
 })();

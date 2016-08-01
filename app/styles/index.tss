@@ -1,16 +1,22 @@
 ".container": {
-	backgroundColor:"white"
+	backgroundColor:"#f5ab35",
+	color: "#ffffff",
+	navBarHidden: true
 }
 
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
-	color: "#000"
 }
 
 "#movieLogoImageView" : {
-	width: "50%",
-	height: "20%",
+	width: "38%",
+	height: "25%",	
 	image: "/images/omdb-logo.png",
-	top: "2%",
+	top: "23%",
+}
+
+"#movieLabel" : {
+	top: "10%",
+	color: "#ffffff"
 }
