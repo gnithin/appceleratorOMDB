@@ -4,7 +4,11 @@
 			<View layout="vertical">
 					<ImageView id="movieLogoImageView"></ImageView>
 					<Label id="movieLabel">Search for your favorite movie...</Label>
-					<View id="moveButtonView"></View>
+					<View id="movieButtonView">	</View>
+					<View id="movieSubMessage">
+						<Label>THE LARGEST</Label>
+						<Label>ONLINE MOVIE DATABASE</Label>
+					</View>
 			</View>
 		</Window>
 	</NavigationWindow>

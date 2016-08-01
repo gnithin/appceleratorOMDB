@@ -83,22 +83,75 @@ function search_movies(e){
 	$.index.openWindow(movieDetailsView);
 }
 
-// TODO: Create a UI with the OMDB logo
-// TODO: Create a search bar
-
 // Initialization script
 (function(){
-	var movieButton = Ti.UI.createButton({
-		id: "movieSearchButton", 
-		title: 'SEARCH',
-	    top: 10,
-	    width: 100,
-	    height: 50,
-	    color: "#ffffff",
-	    font: {
-	    	color : "#ffffff"
-	    }
+	// var buttonHeight = 40;
+	// var movieButton = Ti.UI.createButton({
+		// // This id is not being used anywhere
+		// id: "movieSearchButton",
+// 		
+		// // Properties 
+		// title: 'SEARCH',
+	    // top: "10%",
+	    // width: 100,
+	    // height: buttonHeight,
+		// color: "#ffffff",
+	    // font: {
+	    	// color : "#ffffff"
+	    // },
+// 	        
+	    // // Styling the button
+	    // borderRadius: buttonHeight/2,
+	    // borderWidth: '2',
+	    // borderColor: "#ffffff"
+	// });
+	// // Adding a button as is
+	// $.movieButtonView.add(movieButton);
+// 	
+	// Creating an image and a label
+	var paddingVertical = 10;
+	var paddingHorizontal = 10;
+	var distanceBetweenElements = 20;
+	
+	var dummyView = Ti.UI.createView({
+		height: Ti.UI.SIZE,
+		width: Ti.UI.SIZE,
+		top: paddingVertical,
+		bottom: paddingVertical,
+		layout: "horizontal"
+	});	
+	
+	var paddingLeft = Ti.UI.createView({
+		height: Ti.UI.SIZE,
+		width: paddingHorizontal,
+		left: 0
 	});
-	$.moveButtonView.add(movieButton);
+	
+	var paddingRight = Ti.UI.createView({
+		height: Ti.UI.SIZE,
+		width: paddingHorizontal,
+		left: 0
+	});
+
+	var imageSearchButton = Ti.UI.createImageView({
+		image : "/images/search-icon.png",
+		width: "15%",
+		left: 0
+	});
+	
+	var imageSearchLabel = Ti.UI.createLabel({
+		text: "SEARCH",
+		width: Ti.UI.SIZE,
+		left: distanceBetweenElements,
+		color: "#ffffff"
+	});
+	
+	dummyView.add(paddingLeft);
+	dummyView.add(imageSearchButton);
+	dummyView.add(imageSearchLabel);
+	dummyView.add(paddingRight);
+	
+	$.movieButtonView.add(dummyView);
+	
 	$.index.open();
 })();
