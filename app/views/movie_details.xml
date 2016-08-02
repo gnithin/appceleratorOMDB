@@ -1,6 +1,5 @@
 <Alloy>
-	<Window class="container" id="movieDetailsWindow">
-		<!-- Add the table view for the things here -->
-		<TableView id="movieDetailsTable"></TableView>
-	</Window>
+    <Window id="fgWin">
+        <Require type="widget" src="com.prodz.tiflexigrid" id="fg"/>
+    </Window>       
 </Alloy>
