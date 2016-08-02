@@ -81,7 +81,7 @@ function searchMovies(e){
 	var movieDetailsView = Alloy.createController("movie_details", args).getView();
 	
 	// This is the opening the window in the navigation bar. 
-	$.index.openWindow(movieDetailsView);
+	Alloy.Globals.homeNavBar.openWindow(movieDetailsView);
 }
 
 function createSearchButton(){
@@ -136,5 +136,10 @@ function createSearchButton(){
 // Initialization script
 (function(){
 	createSearchButton();
-	$.index.open();
+	
+	// Making the navigation bar global
+	Alloy.Globals.homeNavBar = $.homeNavBar;
+	
+	// $.index.open();
+	Alloy.Globals.homeNavBar.open();
 })();

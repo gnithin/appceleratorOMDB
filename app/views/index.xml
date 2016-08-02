@@ -1,5 +1,5 @@
 <Alloy>
-	<NavigationWindow>
+	<NavigationWindow id="homeNavBar">
 		<Window class="container" title="OMDB">
 			<View layout="vertical">
 					<ImageView id="movieLogoImageView"></ImageView>
