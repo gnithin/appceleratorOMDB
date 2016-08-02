@@ -9,9 +9,7 @@
 						<Label id="releaseYear"></Label>
 					</View>
 				</View>
-				<View id="contentSection">
-					<Label id="movieContent"></Label>
-				</View>
+				<Label id="movieContent"></Label>
 			</View>
 		</ScrollView>
 	</Window>
