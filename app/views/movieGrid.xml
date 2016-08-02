@@ -2,6 +2,10 @@
 	<View id="mainView">
 		<View id="imgContainer">
 			<ImageView id="thumb"/>
+			<View id="thumbTextBlock">
+				<Label id="thumbTitle"></Label>
+				<Label id="releaseYear"></Label>
+			</View>
 		</View>	
 	</View>	
 </Alloy>

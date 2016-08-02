@@ -1,8 +1,50 @@
-
 ".container" : {
   
 }
 
 "#thumb" : {
-	//image: "/images/omdb-logo.png",
+	height: "100%",
+	width: "100%"
+}
+
+"#thumbTitle" : {
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	color: "#ffffff",
+	font : {
+		fontSize : 13
+	},
+	minimumFontSize: 13,
+	height: 15,
+	width: "80%",
+	wordWrap : false,
+	top: 10
+}
+
+"#releaseYear" : {
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	color: "#959595",
+	font : {
+		fontSize : 10
+	},
+	minimumFontSize: 10,
+	height: 13,
+	width: "80%",
+	wordWrap : false,
+	top: 1
+}
+
+"#imgContainer" : {
+	layout: "absolute",
+}
+
+"#mainView": {
+	
+}
+
+"#thumbTextBlock" : {
+	layout: "vertical",
+	height: "30%",
+	bottom: "0%",
+	width: "100%",
+	backgroundColor: "#80000000"
 }
