@@ -1,7 +1,18 @@
 <Alloy>
 	<Window class="container">
-		<View>
-			<Label>Hello, hello, Holla!</Label>
-		</View>
+		<ScrollView id="detailScrollView">
+			<View id="scrollViewWrapper">
+				<ImageView id="poster"/>
+				<View id="titleSection">
+					<View id="titleSectionWrapper">
+						<Label id="title"></Label>
+						<Label id="releaseYear"></Label>
+					</View>
+				</View>
+				<View id="contentSection">
+					<Label id="movieContent"></Label>
+				</View>
+			</View>
+		</ScrollView>
 	</Window>
 </Alloy>

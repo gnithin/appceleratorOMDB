@@ -17,7 +17,7 @@ function gridOnClickAction(e){
 	// alert('Title is: ' + e.source.data.Title + '. ImdbID : ' + e.source.data.imdbID);
 	// Open a new controller using the navigation bar and send the data
 	var view = Alloy.createController('movie_single_detail', e.source.data).getView();
-	Alloy.Globals.homeNavBar.openWindow(view);
+	Alloy.Globals.homeNavBar.openWindow(view, {animated: true});
 }
 
 function addGrid(args){

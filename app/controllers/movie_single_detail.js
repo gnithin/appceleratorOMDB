@@ -1,3 +1,13 @@
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
-var args = $.args;
-alert("Id = " + args.imdbID);
+(function(){
+	var args = $.args;
+	
+	$.title.text = args.Title;
+	$.releaseYear.text = args.Year;
+	// $.movieContent.text = args.imdbID;
+	$.movieContent.text = "as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas ";
+	
+	$.poster.image = args.Poster;
+	// Fallback
+	$.poster.defaultImage = '/images/Default.png';
+		
+})();

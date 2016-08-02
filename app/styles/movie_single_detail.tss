@@ -1,4 +1,63 @@
+"#detailScrollView" : {
+	contentWidth: Ti.UI.SIZE,
+	width: "100%"
+}
 
-".container" : {
-  
+"#scrollViewWrapper" : {
+	layout: "vertical",
+	height: "auto"
+}
+
+"#movieContent" : {
+	color: "#000000",
+	height: Titanium.UI.FILL
+}
+
+"#releaseYear" : {
+	color: "#ffffff",
+	font : {
+		fontSize : 12
+	},
+	width: "90%",
+	minimumFontSize: 12,
+	height: 13,
+	wordWrap : false,
+	top: 1
+}
+
+"#title" : {
+	color: "#ffffff",
+	font : {
+		fontSize : 15
+	},
+	minimumFontSize: 15,
+	// This is necessary for preventing word-wrap
+	width: "90%",
+	height: 17,
+	wordWrap : false,
+}
+
+"#poster" : {
+	width: "100%",
+	height: "70%",
+}
+
+"#titleSection" : {
+	width: "100%",
+	height: Titanium.UI.SIZE,
+	backgroundColor: "#f5ab35",
+	layout: "vertical"
+}
+
+"#titleSectionWrapper" : {
+	width: "100%",
+	height:	Titanium.UI.SIZE,
+	backgroundColor: "#f5ab35",
+	layout: "vertical",
+	top: 10,
+	bottom: 10
+}
+
+"#contentSection" : {
+	backgroundColor: "#ffffff"
 }
