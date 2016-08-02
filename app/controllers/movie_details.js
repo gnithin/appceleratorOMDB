@@ -2,20 +2,16 @@ function addGrid(args){
 	var items = [];
 	
 	for (var x=0; x < args.length; x++){
-		//THIS IS THE DATA THAT WE WANT AVAILABLE FOR THIS ITEM WHEN onItemClick OCCURS
 	    var values = args[x];
-	
-	    //CREATES A VIEW WITH OUR CUSTOM LAYOUT
 	    var view = Alloy.createController('movieGrid', values).getView();
-	
-	    //NOW WE PUSH TO THE ARRAY THE VIEW AND THE DATA
+	    
 	    items.push({
 	        view: view,
 	        data: values
 	    });
 	};
 	
-	//ADD ALL THE ITEMS TO THE GRID
+	// add all the items to the grid
 	$.fg.addGridItems(items);
 }
 
@@ -40,7 +36,7 @@ function buildTableView(args){
 	    columns:2,
 	    space:0,
 	    gridBackgroundColor:'#fff',
-	    itemHeightDelta: 0,
+	    itemHeightDelta: 50,
 	    itemBackgroundColor:'#eee',
 	    itemBorderColor:'transparent',
 	    itemBorderWidth:0,

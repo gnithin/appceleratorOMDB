@@ -11,34 +11,31 @@
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	color: "#ffffff",
 	font : {
-		fontSize : 13
+		fontSize : 15
 	},
-	minimumFontSize: 13,
-	height: 15,
-	width: "80%",
+	minimumFontSize: 15,
+	// This is necessary for preventing word-wrap
+	height: 17,
+	width: "90%",
 	wordWrap : false,
-	top: 10
+	top: 12
 }
 
 "#releaseYear" : {
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	color: "#959595",
 	font : {
-		fontSize : 10
+		fontSize : 12
 	},
-	minimumFontSize: 10,
+	minimumFontSize: 12,
 	height: 13,
-	width: "80%",
+	width: "90%",
 	wordWrap : false,
 	top: 1
 }
 
 "#imgContainer" : {
 	layout: "absolute",
-}
-
-"#mainView": {
-	
 }
 
 "#thumbTextBlock" : {
