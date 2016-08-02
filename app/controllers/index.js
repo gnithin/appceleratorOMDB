@@ -90,7 +90,7 @@ function createSearchButton(){
 	var paddingHorizontal = 10;
 	var distanceBetweenElements = 20;
 	
-	var dummyView = Ti.UI.createView({
+	var imageSearchWrapper = Ti.UI.createView({
 		height: Ti.UI.SIZE,
 		width: Ti.UI.SIZE,
 		top: paddingVertical,
@@ -123,12 +123,12 @@ function createSearchButton(){
 		color: "#ffffff"
 	});
 	
-	dummyView.add(paddingLeft);
-	dummyView.add(imageSearchButton);
-	dummyView.add(imageSearchLabel);
-	dummyView.add(paddingRight);
+	imageSearchWrapper.add(paddingLeft);
+	imageSearchWrapper.add(imageSearchButton);
+	imageSearchWrapper.add(imageSearchLabel);
+	imageSearchWrapper.add(paddingRight);
 	
-	$.movieButtonView.add(dummyView);
+	$.movieButtonView.add(imageSearchWrapper);
 	
 	$.movieButtonView.addEventListener("click", searchMovies);
 }

@@ -15,20 +15,6 @@ function addGrid(args){
 	$.fg.addGridItems(items);
 }
 
-// build the ui from here.
-function buildTableView(args){
-	// Create a tableview and add it to the movie details
-	// $.movieDetailsTable
-	var row = Titanium.UI.createTableViewRow();
-	var view = Titanium.UI.createLabel({
-	  backgroundColor:'red',
-	  width: 20, height: 20,
-	  text:"Testing"
-	});
-	row.add(view);
-	$.movieDetailsTable.push(row);
-}
-
 (function(){
 	var args = $.args;
 	
