@@ -1,7 +1,7 @@
-".container" : {
-	// Do not hide the navigation bar.
-	// navBarHidden: true
+"#fgWin" : {
+	barColor : "#f5ab35"
 }
+
 "#loadingView" : {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
