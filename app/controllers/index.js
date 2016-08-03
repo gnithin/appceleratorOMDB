@@ -133,9 +133,53 @@ function createSearchButton(){
 	$.movieButtonView.addEventListener("click", searchMovies);
 }
 
+function createSearchBar(){
+	// Maybe put a wrapper here to flesh out the padding and stuff.
+	var searchBar;
+	var orangeColor = "#f5ab35";
+	searchBar = Ti.UI.createSearchBar({
+		showCancel : false,
+		height: Ti.UI.SIZE,
+		width: "80%",
+		backgroundColor: orangeColor,
+		tintColor: orangeColor,
+		borderWidth: 0,
+		borderColor: orangeColor,
+		color: "#ffffff",
+		hintText: "SEARCH",
+		style: Ti.UI.iOS.SEARCH_BAR_STYLE_MINIMAL
+	});
+	
+	// Using a textfield right now, rather than a searchView.
+	// Searchview is pretty hacky when it comes to styling it.
+	// TextView is more straight-forward.
+	searchBar = Ti.UI.createTextField({
+		height: Ti.UI.SIZE,
+		width: "80%",
+		backgroundColor: orangeColor,
+		tintColor: orangeColor,
+		borderWidth: 0,
+		borderColor: "#ffffff",
+		color: "#ffffff",
+		hintText: "SEARCH",
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		hintTextColor : "#ffffff",
+		// For cursor
+		tintColor: "#ffffff",
+		top: 10,
+		bottom: 10
+	});
+	
+	// TODO: Add the event listener for
+	// maybe different key combos or for the return key
+	
+	$.movieButtonView.add(searchBar);
+}
+
 // Initialization script
 (function(){
-	createSearchButton();
+	//createSearchButton();
+	createSearchBar();
 	
 	// Making the navigation bar global
 	Alloy.Globals.homeNavBar = $.homeNavBar;
