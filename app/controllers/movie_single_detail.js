@@ -7,19 +7,17 @@ function fetchMovieData(args){
 	    // function called when the response data is available
 		onload : function(e) {
 		    Ti.API.info("Received text: " + this.responseText);
-			// alert('success');
 			var jsonResponse = JSON.parse(this.responseText);
 			args.moviePlot = jsonResponse["Plot"];
-			
-			createDetailView(args); 
-			//createDetailView([]);	
+			createDetailView(args);
 		},
 		// function called when an error occurs, including a timeout
 		onerror : function(e) {
 		    Ti.API.debug(e.error);
 		    alert('error');
 		},
-		timeout : 5000  // in milliseconds
+		// in milliseconds
+		timeout : 5000
 	});
 	// Prepare the connection.
 	client.open("GET", url);
@@ -36,13 +34,12 @@ function createDetailView(args){
 	var posterImage = args.Poster;
 	var posterDefaultImage = '/images/Default.png';
 	var movieContentText;
-	movieContentText = "as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas the end";
 	movieContentText = args.moviePlot;
-	
 	
 	// Need to create stuff here.
 	var rootView = $.contentView;
 	rootView.height = 500;
+	
 	var scrollView = Ti.UI.createScrollView({
 		id : "scrollViewWrapper",
 		contentWidth: Ti.UI.SIZE,
@@ -106,15 +103,25 @@ function createDetailView(args){
 		top: 1
 	});
 	
+	var movieContentsWrapper = Ti.UI.createView({
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		backgroundColor: "#ffffff"
+	});
+	
 	var movieContentsLabel = Ti.UI.createLabel({
 		id: "movieContent",
 		text: movieContentText,
-		width: "100%",
+		font : {
+			fontSize : 15
+		},
+		width: "95%",
 		height: Ti.UI.SIZE,
 		color: "#000000",
 		backgroundColor: "#ffffff",
 		ellipsize: false,
-		clipMode: Titanium.UI.iOS.CLIP_MODE_DISABLED
+		clipMode: Titanium.UI.iOS.CLIP_MODE_DISABLED,
+		top: 5
 	});
 	
 	// All the add calls need to be here ideally
@@ -136,9 +143,11 @@ function createDetailView(args){
 	
 	titleSection.add(titleSectionWrapper);
 	
+	movieContentsWrapper.add(movieContentsLabel);
+	
 	baseView.add(imageView);
 	baseView.add(titleSection);
-	baseView.add(movieContentsLabel);
+	baseView.add(movieContentsWrapper);
 	
 	rootView.add(baseView);
 }
