@@ -1,5 +1,6 @@
 "#fgWin" : {
-	barColor : "#f5ab35"
+	barColor : "#f5ab35",
+	navTintColor: "#ffffff"
 }
 
 "#loadingView" : {

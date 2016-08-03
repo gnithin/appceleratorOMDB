@@ -71,4 +71,5 @@ function get_movies(searchTerm){
 	initFgLib();
 	searchTerm = "dragon";
 	get_movies(searchTerm);
+	
 })();

@@ -1,7 +1,8 @@
 ".container" : {
 	layout : "vertical",
 	backgroundColor: "#ffffff",
-	barColor : "#f5ab35"
+	barColor : "#f5ab35",
+	navTintColor: "#ffffff"
 }
 
 "#contentView" : {
