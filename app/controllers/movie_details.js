@@ -20,8 +20,10 @@ function gridOnClickAction(e){
 	Alloy.Globals.homeNavBar.openWindow(view, {animated: true});
 }
 
-function addGrid(args){
+function addGrid(args, searchTerm){
 	$.loadingView.removeAllChildren();
+	
+	$.fgWin.title = searchTerm; 
 	
 	Ti.API.info(args);
 	var items = [];
@@ -47,7 +49,7 @@ function get_movies(searchTerm){
 		onload : function(e) {
 		    Ti.API.info("Received text: " + this.responseText);
 		    var respArgs = JSON.parse(this.responseText);
-		    addGrid(respArgs['Search']);
+		    addGrid(respArgs['Search'], searchTerm);
 		},
 		// function called when an error occurs, including a timeout
 		onerror : function(e) {

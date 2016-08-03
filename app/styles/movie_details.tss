@@ -1,6 +1,10 @@
 "#fgWin" : {
 	barColor : "#f5ab35",
-	navTintColor: "#ffffff"
+	navTintColor: "#ffffff",
+	color: "#ffffff",
+	titleAttributes : {
+		"color" : "#ffffff"
+	}
 }
 
 "#loadingView" : {
