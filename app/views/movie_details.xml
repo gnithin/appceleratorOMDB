@@ -1,5 +1,5 @@
 <Alloy>
-    <Window id="fgWin" title="Movie List">
+    <Window id="fgWin">
         <Require type="widget" src="com.prodz.tiflexigrid" id="fg"/>
         <View id="loadingView">
         	<Label>Loading...</Label>

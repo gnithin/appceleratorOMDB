@@ -1,10 +1,13 @@
 ".container" : {
 	layout : "vertical",
-	backgroundColor: "#ffffff"
+	backgroundColor: "#ffffff",
+	barColor : "#f5ab35",
+	navTintColor: "#ffffff"
 }
 
 "#contentView" : {
-	layout: "vertical"
+	layout: "vertical",
+	height: "100%"
 }
 
 "#loadingView" : {
