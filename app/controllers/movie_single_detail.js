@@ -34,13 +34,12 @@ function createDetailView(args){
 	var posterImage = args.Poster;
 	var posterDefaultImage = '/images/Default.png';
 	var movieContentText;
-	movieContentText = "as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas as bas tas the end";
 	movieContentText = args.moviePlot;
-	
 	
 	// Need to create stuff here.
 	var rootView = $.contentView;
 	rootView.height = 500;
+	
 	var scrollView = Ti.UI.createScrollView({
 		id : "scrollViewWrapper",
 		contentWidth: Ti.UI.SIZE,
@@ -106,19 +105,23 @@ function createDetailView(args){
 	
 	var movieContentsWrapper = Ti.UI.createView({
 		width: Ti.UI.SIZE,
-		height: Ti.UI.SIZE
+		height: Ti.UI.SIZE,
+		backgroundColor: "#ffffff"
 	});
 	
 	var movieContentsLabel = Ti.UI.createLabel({
 		id: "movieContent",
 		text: movieContentText,
+		font : {
+			fontSize : 15
+		},
 		width: "95%",
 		height: Ti.UI.SIZE,
 		color: "#000000",
 		backgroundColor: "#ffffff",
 		ellipsize: false,
 		clipMode: Titanium.UI.iOS.CLIP_MODE_DISABLED,
-		
+		top: 5
 	});
 	
 	// All the add calls need to be here ideally
