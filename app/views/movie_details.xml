@@ -1,5 +1,5 @@
 <Alloy>
     <Window id="fgWin" title="Movie List">
         <Require type="widget" src="com.prodz.tiflexigrid" id="fg"/>
-    </Window>       
+    </Window>
 </Alloy>

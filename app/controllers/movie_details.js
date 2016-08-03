@@ -21,6 +21,9 @@ function gridOnClickAction(e){
 }
 
 function addGrid(args){
+	//$.loadingView.removeAllChildren();
+	Ti.API.info("Args 0- ");
+	Ti.API.info(args);
 	var items = [];
 	
 	for (var x=0; x < args.length; x++){
@@ -34,11 +37,38 @@ function addGrid(args){
 	};
 	
 	// add all the items to the grid
+	Ti.API.info(items);
 	$.fg.addGridItems(items);
+}
+
+function get_movies(searchTerm){
+	var client = Ti.Network.createHTTPClient({
+	    // function called when the response data is available
+		onload : function(e) {
+		    Ti.API.info("Received text: " + this.responseText);
+		    var respArgs = JSON.parse(this.responseText);
+		    addGrid(respArgs['Search']);
+		},
+		// function called when an error occurs, including a timeout
+		onerror : function(e) {
+		    Ti.API.debug(e.error);
+		    alert('error');
+		},
+		// in milliseconds
+		timeout : 5000
+	});
+	
+	// Prepare the connection.
+	var url = "https://www.omdbapi.com/?type=movie&y=yes&r=json&s=" + searchTerm;
+	client.open("GET", url);
+	
+	// Send the request.
+	client.send();
 }
 
 (function(){
 	var args = $.args;
 	initFgLib();
-	addGrid(args);
+	searchTerm = "police";
+	get_movies(searchTerm);
 })();
