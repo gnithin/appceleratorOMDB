@@ -7,19 +7,17 @@ function fetchMovieData(args){
 	    // function called when the response data is available
 		onload : function(e) {
 		    Ti.API.info("Received text: " + this.responseText);
-			// alert('success');
 			var jsonResponse = JSON.parse(this.responseText);
 			args.moviePlot = jsonResponse["Plot"];
-			
-			createDetailView(args); 
-			//createDetailView([]);	
+			createDetailView(args);
 		},
 		// function called when an error occurs, including a timeout
 		onerror : function(e) {
 		    Ti.API.debug(e.error);
 		    alert('error');
 		},
-		timeout : 5000  // in milliseconds
+		// in milliseconds
+		timeout : 5000
 	});
 	// Prepare the connection.
 	client.open("GET", url);
@@ -106,15 +104,21 @@ function createDetailView(args){
 		top: 1
 	});
 	
+	var movieContentsWrapper = Ti.UI.createView({
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	
 	var movieContentsLabel = Ti.UI.createLabel({
 		id: "movieContent",
 		text: movieContentText,
-		width: "100%",
+		width: "95%",
 		height: Ti.UI.SIZE,
 		color: "#000000",
 		backgroundColor: "#ffffff",
 		ellipsize: false,
-		clipMode: Titanium.UI.iOS.CLIP_MODE_DISABLED
+		clipMode: Titanium.UI.iOS.CLIP_MODE_DISABLED,
+		
 	});
 	
 	// All the add calls need to be here ideally
@@ -136,9 +140,11 @@ function createDetailView(args){
 	
 	titleSection.add(titleSectionWrapper);
 	
+	movieContentsWrapper.add(movieContentsLabel);
+	
 	baseView.add(imageView);
 	baseView.add(titleSection);
-	baseView.add(movieContentsLabel);
+	baseView.add(movieContentsWrapper);
 	
 	rootView.add(baseView);
 }
