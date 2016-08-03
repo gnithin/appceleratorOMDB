@@ -1,5 +1,6 @@
 ".container" : {
-	layout : "vertical"
+	layout : "vertical",
+	backgroundColor: "#ffffff"
 }
 
 "#contentView" : {

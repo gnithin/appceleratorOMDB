@@ -21,8 +21,8 @@ function gridOnClickAction(e){
 }
 
 function addGrid(args){
-	//$.loadingView.removeAllChildren();
-	Ti.API.info("Args 0- ");
+	$.loadingView.removeAllChildren();
+	
 	Ti.API.info(args);
 	var items = [];
 	
@@ -69,6 +69,6 @@ function get_movies(searchTerm){
 (function(){
 	var args = $.args;
 	initFgLib();
-	searchTerm = "police";
+	searchTerm = "dragon";
 	get_movies(searchTerm);
 })();
