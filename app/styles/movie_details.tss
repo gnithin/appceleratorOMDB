@@ -2,3 +2,8 @@
 	// Do not hide the navigation bar.
 	// navBarHidden: true
 }
+"#loadingView" : {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
+}
