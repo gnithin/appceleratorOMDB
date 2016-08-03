@@ -1,3 +1,16 @@
+".container" : {
+	layout : "vertical"
+}
+
+"#contentView" : {
+	layout: "vertical"
+}
+
+"#loadingView" : {
+	layout: "vertical",
+	height: Titanium.UI.SIZE
+}
+
 "#detailScrollView" : {
 	contentWidth: Ti.UI.SIZE,
 	width: "100%",
