@@ -1,3 +1,5 @@
+var utils = require("utils");
+
 function initFgLib(){
 	$.fg.init({
 	    columns:2,
@@ -44,28 +46,60 @@ function addGrid(args, searchTerm){
 }
 
 function get_movies(searchTerm){
-	var client = Ti.Network.createHTTPClient({
-	    // function called when the response data is available
-		onload : function(e) {
+	var searchArgs = {
+		type: "movie",
+		y: "yes",
+		r: "json",
+		s: searchTerm
+	};
+	
+	var errorCb = function(e){
+		var alertStr = 'Sorry, we encountered an error, You may want to go back and try again!';
+		if(typeof(e) !== "undefined"){
+			Ti.API.error(e.error);
+			if(e.hasOwnProperty("errorId")){
+				Ti.API.error(e.errorId);
+				// This means that it's our custom error
+				if(e["errorId"] == -1){
+					alertStr = "Sorry, No Movies found for " + searchTerm + "!";
+				}else{
+					alertStr = 'Sorry, OMDB seems to have messed up :P You may want to go back and try again!';		
+				}
+			}
+		}
+		alert(alertStr);
+		$.loadingLabel.text = "No Results Found :(";
+	};
+	
+	utils.doGetRequest(
+		"https://www.omdbapi.com/",
+		searchArgs,
+		function(resp) {
 		    Ti.API.info("Received text: " + this.responseText);
-		    var respArgs = JSON.parse(this.responseText);
-		    addGrid(respArgs['Search'], searchTerm);
+		    var respArgs = null;
+		    try{
+		    	respArgs = JSON.parse(this.responseText);	
+		    }catch(err){
+		    	Ti.API.error("Error! - " + err);
+		    	errorCb({error : "Custom error - " + err});
+		    	return;
+		    }
+		    
+		    // Error handling
+		    if(respArgs!== null && respArgs.hasOwnProperty("Search")){
+		    	// Perform the search only if there's a key
+			    addGrid(respArgs['Search'], searchTerm);
+		    }else{
+		    	// This is defined by omdb
+		    	if(respArgs.hasOwnProperty("Response") && respArgs["Response"] === "False"){
+		    		errorCb({error : "Movie not found!", errorId: -1});
+		    	}else{
+		    		errorCb({error : "Invalid Response from OMDB", errorId: -2});
+		    	}
+		    }
 		},
-		// function called when an error occurs, including a timeout
-		onerror : function(e) {
-		    Ti.API.debug(e.error);
-		    alert('error');
-		},
-		// in milliseconds
-		timeout : 5000
-	});
-	
-	// Prepare the connection.
-	var url = "https://www.omdbapi.com/?type=movie&y=yes&r=json&s=" + searchTerm;
-	client.open("GET", url);
-	
-	// Send the request.
-	client.send();
+		errorCb
+	);
 }
 
 (function(){

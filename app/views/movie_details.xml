@@ -2,7 +2,7 @@
     <Window id="fgWin">
         <Require type="widget" src="com.prodz.tiflexigrid" id="fg"/>
         <View id="loadingView">
-        	<Label>Loading...</Label>
+        	<Label id="loadingLabel">Loading...</Label>
         </View>
     </Window>
 </Alloy>
