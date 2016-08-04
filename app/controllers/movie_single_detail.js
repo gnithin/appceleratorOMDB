@@ -1,28 +1,44 @@
+var utils = require("utils");
+
 function fetchMovieData(args){
 	var id = args.imdbID;
 	
-	// Make an xhr request and add the movie details in the
-	var url = "https://www.omdbapi.com/?i=" + id + "&type=movie&tomatoes=true&plot=full&r=json";
-	var client = Ti.Network.createHTTPClient({
-	    // function called when the response data is available
-		onload : function(e) {
+	var movieArgs = {
+		type: "movie",
+		tomatoes: "true",
+		plot: "full", 
+		r: "json",
+		i: id
+	};
+	
+	var url = "https://www.omdbapi.com/";
+	var errorCb = function(e) {
+	    Ti.API.debug(e.error);
+	    alert("Something went wrong! You may want to go back and try again :p");
+	    $.loadingLabel.text = "No Results Found :(";
+	};
+	utils.doGetRequest(
+		url,
+		movieArgs,
+		function(resp) {
 		    Ti.API.info("Received text: " + this.responseText);
-			var jsonResponse = JSON.parse(this.responseText);
-			args.moviePlot = jsonResponse["Plot"];
-			createDetailView(args);
+		    var jsonResponse = null;
+		    try{
+		    	jsonResponse = JSON.parse(this.responseText);
+		    }catch(err){
+		    	Ti.API.error("Json parsing failed - " + err);
+		    	errorcb({error : "Json parsing failed!", errorId:-1});
+		    	return;
+		    }
+		    if(jsonResponse !== null){
+		    	args.moviePlot = jsonResponse["Plot"];
+				createDetailView(args);
+		    }else{
+		    	errorcb({error : "No response", errorId:-2});
+		    }
 		},
-		// function called when an error occurs, including a timeout
-		onerror : function(e) {
-		    Ti.API.debug(e.error);
-		    alert('error');
-		},
-		// in milliseconds
-		timeout : 5000
-	});
-	// Prepare the connection.
-	client.open("GET", url);
-	// Send the request.
-	client.send();
+		errorCb
+	);
 }
 
 function createDetailView(args){
