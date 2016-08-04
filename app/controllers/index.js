@@ -137,18 +137,7 @@ function createSearchBar(){
 	// Maybe put a wrapper here to flesh out the padding and stuff.
 	var searchBar;
 	var orangeColor = "#f5ab35";
-	searchBar = Ti.UI.createSearchBar({
-		showCancel : false,
-		height: Ti.UI.SIZE,
-		width: "80%",
-		backgroundColor: orangeColor,
-		tintColor: orangeColor,
-		borderWidth: 0,
-		borderColor: orangeColor,
-		color: "#ffffff",
-		hintText: "SEARCH",
-		style: Ti.UI.iOS.SEARCH_BAR_STYLE_MINIMAL
-	});
+	// Not using search bar, cause styling it is really crappy
 	
 	// Using a textfield right now, rather than a searchView.
 	// Searchview is pretty hacky when it comes to styling it.
@@ -170,9 +159,17 @@ function createSearchBar(){
 		bottom: 10
 	});
 	
-	// TODO: Add the event listener for
-	// maybe different key combos or for the return key
+	searchBar.addEventListener(
+		'return',
+		function(e){
+			var searchTerm = e.value;
+			Ti.API.debug(searchTerm);
+			// Opening the new view with the args.
+			Alloy.Globals.homeNavBar.openWindow(Alloy.createController('movie_details', {"searchTerm" : searchTerm}).getView());
+		}
+	);
 	
+	// maybe different key combos or for the return key
 	$.movieButtonView.add(searchBar);
 }
 

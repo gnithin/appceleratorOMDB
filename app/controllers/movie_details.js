@@ -71,7 +71,8 @@ function get_movies(searchTerm){
 (function(){
 	var args = $.args;
 	initFgLib();
-	searchTerm = "dragon";
+	// searchTerm = "dragon";
+	var searchTerm = args.searchTerm;
+	Ti.API.debug("Got the search Term - " + searchTerm);
 	get_movies(searchTerm);
-	
 })();
