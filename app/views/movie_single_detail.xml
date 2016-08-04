@@ -1,7 +1,7 @@
 <Alloy>
 	<Window class="container">
 		<View id="loadingView">
-			<Label>Loading...</Label> 
+			<Label id="loadingLabel">Loading...</Label> 
 		</View>
 		<View id="contentView"></View>
 	</Window>

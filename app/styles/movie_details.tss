@@ -1,4 +1,14 @@
-".container" : {
-	// Do not hide the navigation bar.
-	// navBarHidden: true
+"#fgWin" : {
+	barColor : "#f5ab35",
+	navTintColor: "#ffffff",
+	color: "#ffffff",
+	titleAttributes : {
+		"color" : "#ffffff"
+	}
+}
+
+"#loadingView" : {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
 }

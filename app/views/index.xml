@@ -1,6 +1,6 @@
 <Alloy>
 	<NavigationWindow id="homeNavBar">
-		<Window class="container" title="OMDB">
+		<Window class="container">
 			<View layout="vertical">
 					<ImageView id="movieLogoImageView"></ImageView>
 					<Label id="movieLabel">Search for your favorite movie...</Label>
